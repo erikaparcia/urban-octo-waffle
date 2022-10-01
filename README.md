@@ -1,11 +1,9 @@
-# urban-octo-waffle
-#' Util function that set the matrix and the inverse in an environment
+##' Util function that set the matrix and the inverse in an environment
 #' @param x an invertible matrix
 #' examples
 #' x = makeCacheMatrix(matrix(rnorm(9), 3, 3))
 #' x$set(matrix(rnorm(16), 4, 4))
 makeCacheMatrix <- function(x = matrix()) {
-  # todo error if x is not a matrix
   inv <- NULL
   set <- function(y) {
     x <<- y
@@ -27,7 +25,6 @@ makeCacheMatrix <- function(x = matrix()) {
 #' x = makeCacheMatrix(matrix(rnorm(9), 3, 3))
 #' cacheSolve(x)
 cacheSolve <- function(x, ...) {
-  ## Return a matrix that is the inverse of 'x'
   inv <- x$getinverse()
   if(!is.null(inv)) {
     message("getting cached matrix inverse")
